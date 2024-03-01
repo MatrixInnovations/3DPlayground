@@ -14,7 +14,7 @@ export default class ModalContentProvider {
       },
       contactMe: {
         title: 'Contact Me',
-        description: 'LinkedIn: linkedin.com/in/andrew-lowery-geekazon',
+        description: 'LinkedIn: <a href="https://linkedin.com/in/andrew-lowery-geekazon" target="_blank">linkedin.com/in/andrew-lowery-geekazon</a>',
       },
     };
   } 
