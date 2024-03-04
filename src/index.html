@@ -2,26 +2,42 @@
 <html>
 
 <head>
-	<link rel="stylesheet" href="./style.css" type="text/css" />
+	<link rel="shortcut icon" href="#">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
+	<link rel="stylesheet" href="./style.css" type="text/css" />
 	<meta charset="utf-8">
-	<title>Threejs Portfolio</title>
+	<title>Andrew Lowery's 3D Playground (ThrowBack Fresh Prince)</title>
 </head>
 
 <body>
+	  <!-- Embedding the audio file -->
+	  <audio autoplay>
+        <source src="/App/Assets/FreshPrinceSong.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+	<!-- Script to hide the audio player -->
+    <script>
+        window.addEventListener('load', function() {
+            var audioPlayer = document.querySelector('audio');
+            audioPlayer.style.display = 'none';
+        });
+    </script>
+
+
 	<canvas class="threejs"></canvas>
 	<script type="module" src="./index.js"></script>
 	<div class="overlay"></div>
 	<h1 class="loading">Loading Experience... <span id="progressPercentage"></span>%</h1>
 	<button class="start">START</button>
-
 	<div id="myModal" class="modal">
 		<div class="modal-wrapper">
 			<div class="modal-content">
 				<h1 id="modalTitle">Modal Title</h1>
+				<img id="modalImage" src="/App/Assets/HighTop.jpeg" alt="Modal Image">
+				<img id="modalImage" src="/App/Assets/FRB.jpeg" alt="Modal Image">
 				<p id="modalDescription">Modal Description</p>
 			</div>
 			<span class="close">Close</span>
