@@ -10,11 +10,12 @@ export default class ModalContentProvider {
       },
       projects: {
         title: 'React Fullstack Web Application',
-        imageUrl: "/App/Assets/FRB.jpeg",
+        imageUrl: "/App/Assets/MindGamesFaceBrain.jpg",
         description: 'Architected an image recognition app with machine learning API in React. Enhanced skills in ML integration, front-end development, and API handling. Proactively tackled challenges, ensuring seamless synergy between AI and user interface. Web App URL: <a href="https://mindgames-y5b6.onrender.com">MindGamesApp</a>',
       },
       contactMe: {
         title: 'Contact Me',
+        imageUrl: "/App/Assets/BlackTie.jpeg",
         description: 'LinkedIn: <a href="https://linkedin.com/in/andrew-lowery-geekazon" target="_blank">linkedin.com/in/andrew-lowery-geekazon</a>',
       },
     };
@@ -24,8 +25,8 @@ export default class ModalContentProvider {
     return this.modalContents[portalName];
   }
 
-  createAboutMeMesh() {
-    const aboutMeTexture = THREE.ImageUtils.loadTexture(this.modalContents.aboutMe.picture);
+  async createAboutMeMesh() {
+    const aboutMeTexture = await this.loadTexture(this.modalContents.aboutMe.imageUrl);
 
     // Create a plane geometry
     const geometry = new THREE.PlaneGeometry(/* dimensions */);
@@ -35,5 +36,17 @@ export default class ModalContentProvider {
 
     // Create the mesh
     return new THREE.Mesh(geometry, material);
+  }
+
+  loadTexture(url) {
+    return new Promise((resolve, reject) => {
+      const textureLoader = new THREE.TextureLoader();
+      textureLoader.load(
+        url,
+        resolve, // Success callback
+        undefined, // Progress callback
+        reject // Error callback
+      );
+    });
   }
 }
