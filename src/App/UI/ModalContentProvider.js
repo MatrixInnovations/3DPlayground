@@ -15,7 +15,7 @@ export default class ModalContentProvider {
       },
       contactMe: {
         title: 'Contact Me',
-        imageUrl: "/App/Assets/BlackTie.jpeg",
+        imageUrl: "/App/Assets/Twin.jpg",
         description: 'LinkedIn: <a href="https://linkedin.com/in/andrew-lowery-geekazon" target="_blank">linkedin.com/in/andrew-lowery-geekazon</a>',
       },
     };

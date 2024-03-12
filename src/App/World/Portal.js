@@ -37,7 +37,31 @@ export default class Portal {
             if (isNear) {
                 if (!this.prevIsNear){
                     // Open modal with portal information
-                    this.modalManager.openModal(this.modalInfo.title, this.modalInfo.description, this.modalInfo.imageUrl);
+                    const MAX_IMAGE_WIDTH = 350; // Adjust as per your requirements
+                    const MAX_IMAGE_HEIGHT = 350; // Adjust as per your requirements
+                    console.log(MAX_IMAGE_WIDTH, MAX_IMAGE_HEIGHT)
+
+                    const image = new Image();
+                    image.onload = () => {
+                        const aspectRatio = image.width / image.height;
+                        let scaledWidth = image.width;
+                        let scaledHeight = image.height;
+
+                        if (scaledWidth > MAX_IMAGE_WIDTH) {
+                            scaledWidth = MAX_IMAGE_WIDTH;
+                            scaledHeight = scaledWidth / aspectRatio;
+                        }
+
+                        if (scaledHeight > MAX_IMAGE_HEIGHT) {
+                            scaledHeight = MAX_IMAGE_HEIGHT;
+                            scaledWidth = scaledHeight * aspectRatio;
+                        }
+
+                        // Update modal with scaled image
+                        this.modalManager.openModal(this.modalInfo.title, this.modalInfo.description, this.modalInfo.imageUrl, scaledWidth, scaledHeight);
+                    };
+
+                    image.src = this.modalInfo.imageUrl;
                     this.portalMesh.material = this.portalNearMaterial;
                 }
                 this.prevIsNear = true;
