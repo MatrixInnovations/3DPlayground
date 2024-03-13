@@ -9,4 +9,8 @@ export default {
         wasm(),
         topLevelAwait()
       ]
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
