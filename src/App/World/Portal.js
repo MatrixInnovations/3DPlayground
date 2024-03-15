@@ -37,8 +37,8 @@ export default class Portal {
             if (isNear) {
                 if (!this.prevIsNear){
                     // Open modal with portal information
-                    const MAX_IMAGE_WIDTH = 350; // Adjust as per your requirements
-                    const MAX_IMAGE_HEIGHT = 350; // Adjust as per your requirements
+                    const MAX_IMAGE_WIDTH = 350; // Adjust as per my requirements
+                    const MAX_IMAGE_HEIGHT = 350; // Adjust as per my requirements
                     console.log(MAX_IMAGE_WIDTH, MAX_IMAGE_HEIGHT)
 
                     const image = new Image();
