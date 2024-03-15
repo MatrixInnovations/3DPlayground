@@ -8,17 +8,17 @@ export default class ModalManager {
         }
     }
   
-    getImageUrlForPortal(currentPortal) {
-        // Define image URLs for each portal
-        let imageUrls = {
-            portal1: "/App/Assets/HighTop.jpeg",
-            portal2: "/App/Assets/MindGamesFaceBrain.jpg",
-            portal3: "/App/Assets/BlackTie.jpeg"
-        };
+    // getImageUrlForPortal(currentPortal) {
+    //     // Define image URLs for each portal
+    //     let imageUrls = {
+    //         portal1: "/App/Assets/HighTop.jpeg",
+    //         portal2: "/App/Assets/MindGamesFaceBrain.jpg",
+    //         portal3: "/App/Assets/BlackTie.jpeg"
+    //     };
     
-        // Get the appropriate image URL based on the current portal
-        return imageUrls[currentPortal];
-    }
+    //     // Get the appropriate image URL based on the current portal
+    //     return imageUrls[currentPortal];
+    // }
   
     openModal(title, description, imageUrl, width, height) {
         document.getElementById("modalTitle").innerHTML = title;
