@@ -38,15 +38,15 @@ export default class ModalContentProvider {
     return new THREE.Mesh(geometry, material);
   }
 
-  loadTexture(url) {
-    return new Promise((resolve, reject) => {
-      const textureLoader = new THREE.TextureLoader();
-      textureLoader.load(
-        url,
-        resolve, // Success callback
-        undefined, // Progress callback
-        reject // Error callback
-      );
-    });
-  }
-}
+//   loadTexture(url) {
+//     return new Promise((resolve, reject) => {
+//       const textureLoader = new THREE.TextureLoader();
+//       textureLoader.load(
+//         url,
+//         resolve, // Success callback
+//         undefined, // Progress callback
+//         reject // Error callback
+//       );
+//     });
+//   }
+// }
